@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+h1, h2, h3, h4 {
+  @apply font-bold tracking-tight text-white;
+}
+
+.card-border {
+  @apply border border-white/5 bg-zinc-900/30 backdrop-blur-sm hover:border-blue-500/20 transition-all duration-500;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-black;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-zinc-800 rounded-full hover:bg-zinc-700;
+}

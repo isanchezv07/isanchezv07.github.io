@@ -1,0 +1,21 @@
+---
+interface Props {
+    iconPath: string;
+    name: string;
+}
+
+const { iconPath, name } = Astro.props;
+---
+<div class="group relative flex items-center justify-center w-12 h-12 rounded-xl bg-zinc-900/50 border border-white/5 hover:border-blue-500/40 transition-all duration-300 hover:-translate-y-1" title={name}>
+    <img 
+        src={iconPath} 
+        alt={`${name} icon`}
+        class="w-6 h-6 object-contain opacity-30 group-hover:opacity-100 transition-all brightness-0 invert"
+        loading="lazy"
+    />
+    
+    <!-- Discrete Tooltip -->
+    <span class="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-zinc-800 text-[10px] text-white rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap border border-white/5 shadow-xl z-50">
+        {name}
+    </span>
+</div>
